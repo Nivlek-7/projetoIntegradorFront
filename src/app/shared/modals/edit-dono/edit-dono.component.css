@@ -1,0 +1,16 @@
+.mat-dialog-content {
+  border-radius: 10px;
+}
+
+mat-form-field {
+  width: 100%;
+  display: block;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+button, a {
+  width: 48%;
+}

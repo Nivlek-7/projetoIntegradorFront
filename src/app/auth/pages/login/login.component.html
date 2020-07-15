@@ -1,0 +1,65 @@
+<div class="login-page">
+  <mat-card class="mat-elevation-z12">
+    <mat-card-title style="text-align:center; margin-top: 20px; margin-bottom: 20px;">SystemPark</mat-card-title>
+    <mat-tab-group mat-stretch-tabs [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)">
+      <mat-tab label="Login">
+          <mat-card-content>
+            <form>
+              <mat-form-field>
+                <input matInput placeholder="Nome de usuário" type="text" required name="username" [(ngModel)]="loginModel.username" #username="ngModel">
+                  <mat-error *ngIf="username.invalid">Nome de usuário é necessário</mat-error>
+                <mat-icon matSuffix>account_circle</mat-icon>
+              </mat-form-field>
+
+              <mat-form-field>
+                <input matInput placeholder="Senha" type="password" required minlength="4" name="senha" [(ngModel)]="loginModel.senha"  #senha="ngModel">
+                  <mat-error *ngIf="senha.errors && senha.errors.required">Senha é necessário</mat-error>
+                  <mat-error *ngIf="senha.errors && senha.errors.minlength">A senha deve ter no mínimo 4 caracteres</mat-error>
+                <mat-icon matSuffix>vpn_key</mat-icon>
+              </mat-form-field>
+              <button mat-raised-button color="primary" type="submit" class="login-button" (click)="login()">Login</button>
+            </form>
+          </mat-card-content>
+      </mat-tab>
+
+      <mat-tab label="Registrar-se">
+        <mat-card-content>
+          <form #registerForm="ngForm" (ngSubmit)="registrar(registerForm)">
+            <mat-form-field>
+              <input matInput placeholder="Nome" type="text" required name="nome" ngModel #nome="ngModel">
+                <mat-error *ngIf="nome.invalid">Nome é necessário</mat-error>
+              <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="Endereço" type="text" required name="endereco" ngModel #endereco="ngModel">
+                <mat-error *ngIf="endereco.invalid">Endereço é necessário</mat-error>
+              <mat-icon matSuffix>location_on</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput [textMask]="{ mask: mask }" placeholder="Telefone" type="text" required name="telefone" ngModel #telefone="ngModel">
+                <mat-error *ngIf="telefone.errors && telefone.errors.required">Telefone é necessário</mat-error>
+              <mat-icon matSuffix>phone</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput placeholder="Nome de usuário" type="text" required name="username" ngModel #username="ngModel">
+                <mat-error *ngIf="username.invalid">Nome de usuário é necessário</mat-error>
+              <mat-icon matSuffix>account_circle</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Senha" type="password" required minlength="4" name="senha" ngModel #senha="ngModel">
+                <mat-error *ngIf="senha.errors && senha.errors.required">Senha é necessário</mat-error>
+                <mat-error *ngIf="senha.errors && senha.errors.minlength">Senha deve conter 4 caracteres ou mais</mat-error>
+              <mat-icon matSuffix>vpn_key</mat-icon>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid" class="login-button">Registrar</button>
+          </form>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>

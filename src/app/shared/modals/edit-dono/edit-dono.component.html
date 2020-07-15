@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>Editar informações - Dono</h1>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div mat-dialog-content>
+    <mat-form-field>
+      <input matInput placeholder="Nome de usuário" type="text" required name="nome" [ngModel]="data.dono.nome" #nome="ngModel">
+        <mat-error *ngIf="nome.invalid">Nome de usuário é necessário</mat-error>
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Endereço" type="text" required name="endereco" [ngModel]="data.dono.endereco" #endereco="ngModel">
+        <mat-error *ngIf="endereco.invalid">Endereço é necessário</mat-error>
+      <mat-icon matSuffix>location_on</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Telefone" type="text" required name="telefone" [ngModel]="data.dono.telefone" #telefone="ngModel">
+        <mat-error *ngIf="telefone.invalid">Telefone é necessário</mat-error>
+      <mat-icon matSuffix>phone</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field style="width: 48%; display: inline-block; margin-right: 4%;">
+      <input matInput placeholder="Nome de usuário" type="text" required name="username" [ngModel]="data.dono.username" #username="ngModel">
+        <mat-error *ngIf="username.invalid">Nome de usuário é necessário</mat-error>
+      <mat-icon matSuffix>account_circle</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field style="width: 48%; display: inline-block;">
+      <input matInput placeholder="Senha" type="password" required name="senha" [ngModel]="data.dono.senha" #senha="ngModel">
+        <mat-error *ngIf="senha.invalid">Senha é necessário</mat-error>
+      <mat-icon matSuffix>vpn_key</mat-icon>
+    </mat-form-field>
+
+    <input type="hidden" name="id" [(ngModel)]="data.dono.id" >
+  </div>
+  <div mat-dialog-actions>
+    <a mat-button mat-dialog-close>Cancelar</a>
+    <button mat-flat-button color="primary" type="submit" [disabled]="!f.valid" cdkFocusInitial>Editar</button>
+  </div>
+</form>

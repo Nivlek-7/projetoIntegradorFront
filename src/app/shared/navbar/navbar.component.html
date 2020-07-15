@@ -1,0 +1,15 @@
+<mat-toolbar color="primary" class="mat-elevation-z4">
+  <span>SystemPark</span>
+
+  <div class="spacer"></div>
+
+  <button mat-button [matMenuTriggerFor]="beforeMenu">
+    <mat-icon>person_outline</mat-icon> Conta
+  </button>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+    <button mat-menu-item (click)="modalEditar()"><mat-icon>edit</mat-icon>Editar</button>
+    <button mat-menu-item (click)="modalExcluir()"><mat-icon>delete_forever</mat-icon>Deletar</button>
+  </mat-menu>
+
+  <a mat-raised-button color="accent"(click)="logout()"><mat-icon>exit_to_app</mat-icon> Sair</a>
+</mat-toolbar>
