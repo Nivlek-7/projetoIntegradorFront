@@ -2,8 +2,8 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
   <div mat-dialog-content>
     <mat-form-field>
-      <input matInput placeholder="Nome de usuário" type="text" required name="nome" [ngModel]="data.dono.nome" #nome="ngModel">
-        <mat-error *ngIf="nome.invalid">Nome de usuário é necessário</mat-error>
+      <input matInput placeholder="Nome completo" type="text" required name="nome" [ngModel]="data.dono.nome" #nome="ngModel">
+        <mat-error *ngIf="nome.invalid">Nome completo é necessário</mat-error>
       <mat-icon matSuffix>person</mat-icon>
     </mat-form-field>
 
@@ -19,13 +19,13 @@
       <mat-icon matSuffix>phone</mat-icon>
     </mat-form-field>
 
-    <mat-form-field style="width: 48%; display: inline-block; margin-right: 4%;">
+    <mat-form-field>
       <input matInput placeholder="Nome de usuário" type="text" required name="username" [ngModel]="data.dono.username" #username="ngModel">
         <mat-error *ngIf="username.invalid">Nome de usuário é necessário</mat-error>
       <mat-icon matSuffix>account_circle</mat-icon>
     </mat-form-field>
 
-    <mat-form-field style="width: 48%; display: inline-block;">
+    <mat-form-field>
       <input matInput placeholder="Senha" type="password" required name="senha" [ngModel]="data.dono.senha" #senha="ngModel">
         <mat-error *ngIf="senha.invalid">Senha é necessário</mat-error>
       <mat-icon matSuffix>vpn_key</mat-icon>

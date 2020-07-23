@@ -47,7 +47,7 @@ export class NavbarComponent implements OnInit {
   dialogEditDono() {
     let config: MatDialogConfig = {
       data: { dono: this.dono },
-      width: '400px',
+      width: '350px',
       autoFocus: true
     }
 

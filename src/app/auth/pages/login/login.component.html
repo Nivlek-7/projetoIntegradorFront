@@ -26,8 +26,8 @@
         <mat-card-content>
           <form #registerForm="ngForm" (ngSubmit)="registrar(registerForm)">
             <mat-form-field>
-              <input matInput placeholder="Nome" type="text" required name="nome" ngModel #nome="ngModel">
-                <mat-error *ngIf="nome.invalid">Nome é necessário</mat-error>
+              <input matInput placeholder="Nome completo" type="text" required name="nome" ngModel #nome="ngModel">
+                <mat-error *ngIf="nome.invalid">Nome completo é necessário</mat-error>
               <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
 
