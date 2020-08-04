@@ -3,10 +3,12 @@
 <!-- Sidebar -->
 <mat-drawer-container class="example-container">
   <mat-drawer mode="side" opened>
-    Drawer content
+    <p>Drawer content</p>
+    <a mat-stroked-button routerLink="./estacionamento">Estacionamento</a>
   </mat-drawer>
   <mat-drawer-content>
-    Main content
+    <p>Main content</p>
+    <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
 
