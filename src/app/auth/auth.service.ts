@@ -23,7 +23,7 @@ export class AuthService {
         }),
         mapTo(true),
         catchError(error => {
-          alert(error.error.message);
+          alert(error.error.message || 'Erro no servidor');
           return of(false);
         }));
   }

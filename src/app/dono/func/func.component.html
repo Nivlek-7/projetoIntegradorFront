@@ -1,6 +1,6 @@
-<h1>Estacionamentos</h1>
+<h1>Funcionários</h1>
 <div class="filter">
-  <button mat-raised-button (click)="cadastrarEstacionamento()"><mat-icon>add</mat-icon> Cadastrar</button>
+  <button mat-raised-button (click)="cadastrarFuncionario()"><mat-icon>add</mat-icon> Cadastrar</button>
 
   <mat-form-field>
     <mat-label>Filtrar...</mat-label>
@@ -8,11 +8,16 @@
   </mat-form-field>
 </div>
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="estacionamentos" class="example-table" matSort matSortActive="nome" matSortDirection="asc">
+  <table mat-table [dataSource]="funcionarios" class="example-table" matSort matSortActive="nome" matSortDirection="asc">
 
     <ng-container matColumnDef="nome">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
       <td mat-cell *matCellDef="let row">{{row.nome}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="cpf">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>CPF</th>
+      <td mat-cell *matCellDef="let row">{{row.cpf}}</td>
     </ng-container>
 
     <ng-container matColumnDef="endereco">
@@ -25,26 +30,16 @@
       <td mat-cell *matCellDef="let row">{{row.telefone}}</td>
     </ng-container>
 
-    <ng-container matColumnDef="valorPorHora">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Valor por hora</th>
-      <td mat-cell *matCellDef="let row">{{row.valorPorHora}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="vagas">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Vagas</th>
-      <td mat-cell *matCellDef="let row">{{row.vagas}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="vagasDisponiveis">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Vagas disponiveis</th>
-      <td mat-cell *matCellDef="let row">{{row.vagasDisponiveis}}</td>
+    <ng-container matColumnDef="estacionamento">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Estacionamento</th>
+      <td mat-cell *matCellDef="let row">{{row.estacionamento.nome}}</td>
     </ng-container>
 
     <ng-container matColumnDef="acoes">
       <th mat-header-cell *matHeaderCellDef>Ações</th>
       <td mat-cell *matCellDef="let row">
-        <button mat-icon-button matTooltip="Editar" matTooltipPosition="left" (click)="editarEstacionamento(row)"><mat-icon>edit</mat-icon></button>
-        <button mat-icon-button matTooltip="Excluir" matTooltipPosition="right" (click)="excluirEstacionamento(row.id)" color="warn"><mat-icon>delete_outline</mat-icon></button>
+        <button mat-icon-button matTooltip="Editar" matTooltipPosition="left" (click)="editarFuncionario(row)"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button matTooltip="Excluir" matTooltipPosition="right" (click)="excluirFuncionario(row.id)" color="warn"><mat-icon>delete_outline</mat-icon></button>
       </td>
     </ng-container>
 

@@ -6,13 +6,15 @@
           <mat-card-content>
             <form>
               <mat-form-field>
-                <input matInput placeholder="Nome de usuário" type="text" required name="username" [(ngModel)]="loginModel.username" #username="ngModel">
+                <mat-label>Nome de usuário</mat-label>
+                <input matInput placeholder="Digite seu nome de usuário" type="text" required name="username" [(ngModel)]="loginModel.username" #username="ngModel">
                   <mat-error *ngIf="username.invalid">Nome de usuário é necessário</mat-error>
                 <mat-icon matSuffix>account_circle</mat-icon>
               </mat-form-field>
 
               <mat-form-field>
-                <input matInput placeholder="Senha" type="password" required minlength="4" name="senha" [(ngModel)]="loginModel.senha"  #senha="ngModel">
+                <mat-label>Senha</mat-label>
+                <input matInput placeholder="Digite sua senha" type="password" required minlength="4" name="senha" [(ngModel)]="loginModel.senha"  #senha="ngModel">
                   <mat-error *ngIf="senha.errors && senha.errors.required">Senha é necessário</mat-error>
                   <mat-error *ngIf="senha.errors && senha.errors.minlength">A senha deve ter no mínimo 4 caracteres</mat-error>
                 <mat-icon matSuffix>vpn_key</mat-icon>
@@ -26,31 +28,36 @@
         <mat-card-content>
           <form #registerForm="ngForm" (ngSubmit)="registrar(registerForm)">
             <mat-form-field>
-              <input matInput placeholder="Nome completo" type="text" required name="nome" ngModel #nome="ngModel">
+              <mat-label>Nome completo</mat-label>
+              <input matInput placeholder="Fulano de Tal" type="text" required name="nome" ngModel #nome="ngModel">
                 <mat-error *ngIf="nome.invalid">Nome completo é necessário</mat-error>
               <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
 
             <mat-form-field>
-              <input matInput placeholder="Endereço" type="text" required name="endereco" ngModel #endereco="ngModel">
+              <mat-label>Endereço</mat-label>
+              <input matInput placeholder="Rua Tal, 999" type="text" required name="endereco" ngModel #endereco="ngModel">
                 <mat-error *ngIf="endereco.invalid">Endereço é necessário</mat-error>
               <mat-icon matSuffix>location_on</mat-icon>
             </mat-form-field>
 
             <mat-form-field>
-              <input matInput [textMask]="{ mask: mask }" placeholder="Telefone" type="text" required name="telefone" ngModel #telefone="ngModel">
+              <mat-label>Telefone</mat-label>
+              <input matInput [textMask]="{ mask: mask }" placeholder="(99) 99999-9999" type="text" required name="telefone" ngModel #telefone="ngModel">
                 <mat-error *ngIf="telefone.errors && telefone.errors.required">Telefone é necessário</mat-error>
               <mat-icon matSuffix>phone</mat-icon>
             </mat-form-field>
 
             <mat-form-field>
-              <input matInput placeholder="Nome de usuário" type="text" required name="username" ngModel #username="ngModel">
+              <mat-label>Nome de usuário</mat-label>
+              <input matInput placeholder="username" type="text" required name="username" ngModel #username="ngModel">
                 <mat-error *ngIf="username.invalid">Nome de usuário é necessário</mat-error>
               <mat-icon matSuffix>account_circle</mat-icon>
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput placeholder="Senha" type="password" required minlength="4" name="senha" ngModel #senha="ngModel">
+              <mat-label>Senha</mat-label>
+              <input matInput placeholder="p@ssw0rd" type="password" required minlength="4" name="senha" ngModel #senha="ngModel">
                 <mat-error *ngIf="senha.errors && senha.errors.required">Senha é necessário</mat-error>
                 <mat-error *ngIf="senha.errors && senha.errors.minlength">Senha deve conter 4 caracteres ou mais</mat-error>
               <mat-icon matSuffix>vpn_key</mat-icon>

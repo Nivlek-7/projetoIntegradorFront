@@ -14,6 +14,8 @@ export class EditDonoComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<EditDonoComponent>, private service: DonoService, private snackbarService: SnackbarService,
      @Inject(MAT_DIALOG_DATA) public data: any) { }
 
+  public mask = ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
+
   ngOnInit(): void {
   }
 

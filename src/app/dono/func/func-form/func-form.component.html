@@ -1,0 +1,62 @@
+<h2 mat-dialog-title>{{data.buttonName}} funcionário</h2>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Nome completo do funcionário</mat-label>
+      <input matInput placeholder="Digite o nome do funcionário" type="text" required name="nome" [ngModel]="data.nome" #nome="ngModel">
+        <mat-error *ngIf="nome.invalid">Nome do funcionário é necessário</mat-error>
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>CPF</mat-label>
+      <input matInput [textMask]="{ mask: maskCpf }" placeholder="Digite o CPF do funcionário" type="text" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" required name="cpf" [ngModel]="data.cpf" #cpf="ngModel">
+        <mat-error *ngIf="cpf.invalid">CPF é necessário</mat-error>
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Endereço</mat-label>
+      <input matInput placeholder="Digite o endereço do funcionário" type="text" required name="endereco" [ngModel]="data.endereco" #endereco="ngModel">
+        <mat-error *ngIf="endereco.invalid">Endereço é necessário</mat-error>
+      <mat-icon matSuffix>location_on</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Telefone</mat-label>
+      <input matInput [textMask]="{ mask: maskTelefone }" placeholder="Digite o telefone do funcionário" type="text" required name="telefone" [ngModel]="data.telefone" #telefone="ngModel">
+        <mat-error *ngIf="telefone.invalid">Telefone é necessário</mat-error>
+      <mat-icon matSuffix>phone</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Nome de usuário do funcionário</mat-label>
+      <input matInput placeholder="Digite o nome de usuário do funcionário" type="text" required name="username" [ngModel]="data.username" #username="ngModel">
+        <mat-error *ngIf="username.invalid">Nome de usuário do funcionário é necessário</mat-error>
+      <mat-icon matSuffix>account_circle</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Senha</mat-label>
+      <input matInput placeholder="Digite a senha do funcionário" type="text" required name="senha" [ngModel]="data.senha" #senha="ngModel">
+        <mat-error *ngIf="senha.invalid">Senha do funcionário é necessário</mat-error>
+      <mat-icon matSuffix>vpn_key</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="!data.estacionamento">
+      <mat-label>Estacionamento</mat-label>
+      <mat-select [(ngModel)]="estacionamento" name="estacionamento">
+        <mat-option *ngFor="let est of estacionamentos" [value]="est">
+          {{est.nome}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <input type="hidden" name="id" [ngModel]="data.id">
+    <input type="hidden" name="estacionamento" [ngModel]="data.estacionamento">
+  </div>
+  <div mat-dialog-actions>
+    <a mat-button mat-dialog-close>Cancelar</a>
+    <button mat-flat-button color="primary" type="submit" [disabled]="!f.valid" cdkFocusInitial>{{data.buttonName}}</button>
+  </div>
+</form>
