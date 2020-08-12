@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.authService.isLoggedIn()) {
-      this.route.navigate(['/dono'])
+      if (sessionStorage.getItem('tipoUser') === 'dono') this.route.navigate(['/dono'])
+      else this.route.navigate(['/funcionario'])
     }
   }
 
@@ -37,7 +38,8 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginModel)
       .subscribe(sucess => {
         if (sucess) {
-          this.route.navigate(['/dono'])
+          if (sessionStorage.getItem('tipoUser') === 'dono') this.route.navigate(['/dono'])
+          else this.route.navigate(['/funcionario'])
         }
       })
   }
@@ -47,7 +49,6 @@ export class LoginComponent implements OnInit {
       success => {
         this.snackbar.success('Dono registrado com sucesso.');
         setInterval(xd => this.selected.setValue(this.selected.value - 1), 1000);
-        //this.selected.setValue(this.selected.value - 1);
       }, error => this.snackbar.error('Erro ao registrar dono.')
     )
   }

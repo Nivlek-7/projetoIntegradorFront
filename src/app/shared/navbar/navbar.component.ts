@@ -16,16 +16,18 @@ import { ConfirmDialogService } from '../confirm-dialog.service';
 export class NavbarComponent implements OnInit {
 
   dono: Dono = new Dono();
+  mostrarExcluir: boolean;
 
   constructor(private router: Router, private dialog: MatDialog, private donoService: DonoService, private dialogService: ConfirmDialogService,
     private snackbarService: SnackbarService) { }
 
   ngOnInit(): void {
     if (sessionStorage.getItem('tipoUser') === 'dono') {
+      this.mostrarExcluir = true;
       this.donoService.carregarSiMesmo()
         .subscribe(data => this.dono = data)
     } else {
-
+      this.mostrarExcluir = false;
     }
 
 

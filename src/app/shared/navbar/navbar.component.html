@@ -8,7 +8,7 @@
   </button>
   <mat-menu #beforeMenu="matMenu" xPosition="before">
     <button mat-menu-item (click)="modalEditar()"><mat-icon>edit</mat-icon>Editar</button>
-    <button mat-menu-item (click)="modalExcluir()"><mat-icon>delete_forever</mat-icon>Deletar</button>
+    <button mat-menu-item *ngIf="mostrarExcluir" (click)="modalExcluir()"><mat-icon>delete_forever</mat-icon>Deletar</button>
   </mat-menu>
 
   <a mat-raised-button color="accent"(click)="logout()"><mat-icon>exit_to_app</mat-icon> Sair</a>
