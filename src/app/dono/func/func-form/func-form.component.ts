@@ -32,8 +32,6 @@ export class FuncFormComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(this.estacionamento);
-
     let titleSuccess: string;
     let titleError: string;
 
@@ -45,7 +43,7 @@ export class FuncFormComponent implements OnInit {
       titleError = 'Erro ao cadastrar funcionário.';
       form.value.estacionamento = this.estacionamento;
     }
-    console.log(form.value.estacionamento)
+
     this.funcService.save(form.value).subscribe(
       success => {
         this.snackbarService.success(titleSuccess);

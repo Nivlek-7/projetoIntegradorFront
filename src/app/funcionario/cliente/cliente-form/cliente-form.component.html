@@ -1,1 +1,31 @@
-<p>cliente-form works!</p>
+<h2 mat-dialog-title>{{data.buttonName}} cliente</h2>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Nome completo do cliente</mat-label>
+      <input matInput placeholder="Digite o nome do cliente" type="text" required name="nome" [ngModel]="data.nome" #nome="ngModel">
+        <mat-error *ngIf="nome.invalid">Nome do cliente é necessário</mat-error>
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Telefone</mat-label>
+      <input matInput [textMask]="{ mask: maskTelefone }" placeholder="Digite o telefone do cliente" type="text" required name="telefone" [ngModel]="data.telefone" #telefone="ngModel">
+        <mat-error *ngIf="telefone.invalid">Telefone do cliente é necessário</mat-error>
+      <mat-icon matSuffix>phone</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Digite o email do cliente" type="email" required name="email" [ngModel]="data.email" #email="ngModel">
+        <mat-error *ngIf="email.invalid">Email do cliente é necessário</mat-error>
+      <mat-icon matSuffix>vpn_key</mat-icon>
+    </mat-form-field>
+
+    <input type="hidden" name="id" [ngModel]="data.id">
+  </div>
+  <div mat-dialog-actions>
+    <a mat-button mat-dialog-close>Cancelar</a>
+    <button mat-flat-button color="primary" type="submit" [disabled]="!f.valid" cdkFocusInitial>{{data.buttonName}}</button>
+  </div>
+</form>
