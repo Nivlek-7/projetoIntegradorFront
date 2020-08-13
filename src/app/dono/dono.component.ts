@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonoComponent implements OnInit {
 
+  nome = sessionStorage.getItem('nome');
+
   constructor() { }
 
   ngOnInit(): void {

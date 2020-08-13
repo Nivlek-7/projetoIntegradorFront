@@ -16,3 +16,18 @@ mat-drawer {
 mat-drawer-content {
   padding: 20px;
 }
+
+.bem-vindo {
+  text-align: center;
+}
+
+.bem-vindo h2 {
+  font-weight: bold;
+}
+
+a {
+  margin: auto;
+  width: 100%;
+  font-size: 16px;
+  padding: 20px;
+}

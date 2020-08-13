@@ -3,9 +3,14 @@
 <!-- Sidebar -->
 <mat-drawer-container class="example-container">
   <mat-drawer mode="side" opened>
-    <p>Drawer content</p>
-    <a mat-stroked-button routerLink="./estacionamento">Estacionamento</a>
-    <a mat-stroked-button routerLink="./funcionario">Funcionario</a>
+    <div class="bem-vindo">
+      <h2>Bem-vindo, {{nome}}</h2>
+    </div>
+    <mat-divider></mat-divider>
+    <a mat-button routerLink="./estacionamento">Estacionamento</a>
+    <mat-divider></mat-divider>
+    <a mat-button routerLink="./funcionario">Funcionário</a>
+    <mat-divider></mat-divider>
   </mat-drawer>
   <mat-drawer-content>
     <router-outlet></router-outlet>

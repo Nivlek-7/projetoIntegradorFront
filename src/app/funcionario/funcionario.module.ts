@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { FuncionarioComponent } from './funcionario.component';
 import { ClienteComponent } from './cliente/cliente.component';
@@ -41,7 +42,8 @@ import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.compon
     MatInputModule,
     MatTooltipModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDividerModule
   ]
 })
 export class FuncionarioModule { }

@@ -20,7 +20,7 @@ export class FooterComponent implements OnInit {
     let segundos = data.getSeconds().toString();
     minutos = Number.parseInt(minutos) < 10 ? '0' + minutos : minutos  //this.adicionaZero(minutos);
     segundos = Number.parseInt(segundos) < 10 ? '0' + segundos : segundos  //this.adicionaZero(segundos);
-    return `${hora}:${minutos}:${segundos} ${data.toLocaleDateString()}`
+    return `${hora}:${minutos}:${segundos} | ${data.toLocaleDateString()}`
   }
 
   getYear() {

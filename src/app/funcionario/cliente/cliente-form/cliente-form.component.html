@@ -19,7 +19,7 @@
       <mat-label>Email</mat-label>
       <input matInput placeholder="Digite o email do cliente" type="email" required name="email" [ngModel]="data.email" #email="ngModel">
         <mat-error *ngIf="email.invalid">Email do cliente é necessário</mat-error>
-      <mat-icon matSuffix>vpn_key</mat-icon>
+      <mat-icon matSuffix>email</mat-icon>
     </mat-form-field>
 
     <input type="hidden" name="id" [ngModel]="data.id">

@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { DonoComponent } from './dono.component';
 import { EstacionamentoComponent } from './estacionamento/estacionamento.component';
@@ -45,7 +46,8 @@ import { FuncFormComponent } from './func/func-form/func-form.component';
     MatInputModule,
     MatTooltipModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDividerModule
   ]
 })
 export class DonoModule { }

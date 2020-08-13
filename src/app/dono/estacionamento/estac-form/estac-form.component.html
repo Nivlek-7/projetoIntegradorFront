@@ -26,14 +26,14 @@
       <mat-label>Valor por hora</mat-label>
       <input matInput placeholder="Digite o valor por hora" type="number" pattern="^\d*(\.\d{0,2})?$" required name="valorPorHora" [ngModel]="data.valorPorHora" #valorPorHora="ngModel">
         <mat-error *ngIf="valorPorHora.invalid">Valor por hora é necessário, só é permitido 2 casas após a vírgula</mat-error>
-      <mat-icon matSuffix>account_circle</mat-icon>
+      <mat-icon matSuffix>attach_money</mat-icon>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Vagas</mat-label>
       <input matInput placeholder="Digite a quantidade de vagas" type="number" pattern="^\d*(\.\d{0})?$" required name="vagas" [ngModel]="data.vagas" #vagas="ngModel">
         <mat-error *ngIf="vagas.invalid">Vagas é necessário, apenas valores inteiros</mat-error>
-      <mat-icon matSuffix>vpn_key</mat-icon>
+      <mat-icon matSuffix>ballot</mat-icon>
     </mat-form-field>
 
     <input type="hidden" name="id" [ngModel]="data.id">

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FuncionarioComponent implements OnInit {
 
+  nome = sessionStorage.getItem('nome');
+
   constructor() { }
 
   ngOnInit(): void {

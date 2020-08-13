@@ -12,7 +12,7 @@
       <mat-label>CPF</mat-label>
       <input matInput [textMask]="{ mask: maskCpf }" placeholder="Digite o CPF do funcionário" type="text" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" required name="cpf" [ngModel]="data.cpf" #cpf="ngModel">
         <mat-error *ngIf="cpf.invalid">CPF é necessário</mat-error>
-      <mat-icon matSuffix>person</mat-icon>
+      <mat-icon matSuffix>assignment_ind</mat-icon>
     </mat-form-field>
 
     <mat-form-field>

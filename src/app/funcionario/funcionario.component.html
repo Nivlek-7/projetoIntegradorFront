@@ -3,8 +3,12 @@
 <!-- Sidebar -->
 <mat-drawer-container class="example-container">
   <mat-drawer mode="side" opened>
-    <p>Drawer content</p>
-    <a mat-stroked-button routerLink="./cliente">Cliente</a>
+    <div class="bem-vindo">
+      <h2>Bem-vindo, {{nome}}</h2>
+    </div>
+    <mat-divider></mat-divider>
+    <a mat-button routerLink="./cliente">Cliente</a>
+    <mat-divider></mat-divider>
   </mat-drawer>
   <mat-drawer-content>
     <router-outlet></router-outlet>
