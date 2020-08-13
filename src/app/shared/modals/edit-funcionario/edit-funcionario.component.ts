@@ -1,17 +1,17 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { DonoService } from 'src/app/services/dono.service';
+import { FuncionarioService } from './../../../services/funcionario.service';
 import { SnackbarService } from '../../snackbar.service';
 
 @Component({
-  selector: 'app-edit-dono',
-  templateUrl: './edit-dono.component.html',
-  styleUrls: ['./edit-dono.component.css']
+  selector: 'app-edit-funcionario',
+  templateUrl: './edit-funcionario.component.html',
+  styleUrls: ['./edit-funcionario.component.css']
 })
-export class EditDonoComponent implements OnInit {
+export class EditFuncionarioComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<EditDonoComponent>, private service: DonoService, private snackbarService: SnackbarService,
+  constructor(public dialogRef: MatDialogRef<EditFuncionarioComponent>, private service: FuncionarioService, private snackbarService: SnackbarService,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   public mask = ['(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
@@ -20,7 +20,7 @@ export class EditDonoComponent implements OnInit {
   }
 
   onSubmit(form) {
-    this.service.save(form.value).subscribe(
+    this.service.update2(form.value).subscribe(
       success => {
         this.snackbarService.success('Editado com sucesso.');
         this.dialogRef.close(form.value);

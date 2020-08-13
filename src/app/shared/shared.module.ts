@@ -16,13 +16,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { EditDonoComponent } from './modals/edit-dono/edit-dono.component';
 import { ConfirmDialogComponent } from './modals/confirm-dialog/confirm-dialog.component';
+import { EditFuncionarioComponent } from './modals/edit-funcionario/edit-funcionario.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     FooterComponent,
     EditDonoComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    EditFuncionarioComponent
   ],
   imports: [
     CommonModule,
