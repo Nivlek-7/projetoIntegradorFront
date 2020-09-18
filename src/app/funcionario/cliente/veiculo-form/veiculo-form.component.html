@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>{{data.buttonName}} veículo</h2>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Placa</mat-label>
+      <input matInput placeholder="Digite a placa do veículo" type="text" required name="placa" [ngModel]="data.placa" #placa="ngModel">
+        <mat-error *ngIf="placa.invalid">Placa é necessário</mat-error>
+      <mat-icon matSuffix>font_download</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Modelo</mat-label>
+      <input matInput placeholder="Digite o telefone do veículo" type="text" required name="modelo" [ngModel]="data.modelo" #modelo="ngModel">
+        <mat-error *ngIf="modelo.invalid">Modelo do veículo é necessário</mat-error>
+      <mat-icon matSuffix>local_activity</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Cor</mat-label>
+      <input matInput placeholder="Digite a cor do veículo" type="text" required name="cor" [ngModel]="data.cor" #cor="ngModel">
+        <mat-error *ngIf="cor.invalid">Cor do veículo é necessário</mat-error>
+      <mat-icon matSuffix>color_lens</mat-icon>
+    </mat-form-field>
+
+    <input type="hidden" name="id" [ngModel]="data.id">
+    <input type="hidden" name="cliente" [ngModel]="data.cliente">
+  </div>
+  <div mat-dialog-actions>
+    <a mat-button mat-dialog-close>Cancelar</a>
+    <button mat-flat-button color="primary" type="submit" [disabled]="!f.valid" cdkFocusInitial>{{data.buttonName}}</button>
+  </div>
+</form>

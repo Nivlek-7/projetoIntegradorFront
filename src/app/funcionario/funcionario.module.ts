@@ -20,12 +20,14 @@ import { MatDividerModule } from '@angular/material/divider';
 import { FuncionarioComponent } from './funcionario.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
+import { VeiculoFormComponent } from './cliente/veiculo-form/veiculo-form.component';
 
 @NgModule({
   declarations: [
     FuncionarioComponent,
     ClienteComponent,
-    ClienteFormComponent
+    ClienteFormComponent,
+    VeiculoFormComponent
   ],
   imports: [
     CommonModule,

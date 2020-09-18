@@ -10,7 +10,20 @@
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="estacionamentos" class="example-table" matSort matSortActive="nome" matSortDirection="asc">
 
-    <ng-container matColumnDef="nome">
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns">
+      <th mat-header-cell *matHeaderCellDef>{{column}}</th>
+      <td mat-cell *matCellDef="let row">
+        <ng-container *ngIf="column != 'acoes'; else acoes">
+          {{row[column]}}
+        </ng-container>
+        <ng-template #acoes>
+          <button mat-icon-button matTooltip="Editar" matTooltipPosition="left" (click)="editarEstacionamento(row)"><mat-icon>edit</mat-icon></button>
+          <button mat-icon-button matTooltip="Excluir" matTooltipPosition="right" (click)="excluirEstacionamento(row.id)" color="warn"><mat-icon>delete_outline</mat-icon></button>
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="nome">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
       <td mat-cell *matCellDef="let row">{{row.nome}}</td>
     </ng-container>
@@ -46,7 +59,7 @@
         <button mat-icon-button matTooltip="Editar" matTooltipPosition="left" (click)="editarEstacionamento(row)"><mat-icon>edit</mat-icon></button>
         <button mat-icon-button matTooltip="Excluir" matTooltipPosition="right" (click)="excluirEstacionamento(row.id)" color="warn"><mat-icon>delete_outline</mat-icon></button>
       </td>
-    </ng-container>
+    </ng-container> -->
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
