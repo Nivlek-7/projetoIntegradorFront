@@ -10,7 +10,7 @@
   <h1 style="float: right;">Valor por hora: R${{estacionamento.valorPorHora}}</h1>
 </div>
 <div class="mat-elevation-z8">
-  <table mat-table [dataSource]="entradas" class="example-table" matSort matSortActive="placa" matSortDirection="asc">
+  <table mat-table [dataSource]="entradas" class="example-table" matSort matSortActive="hora" matSortDirection="asc">
 
     <ng-container matColumnDef="placa">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Placa</th>
