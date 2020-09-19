@@ -1,0 +1,53 @@
+<h1>Entradas</h1>
+<h1 style="float: right;"><i>Vagas Restantes: {{estacionamento.vagasDisponiveis}}</i></h1>
+<div class="filter">
+  <button mat-raised-button (click)="registrarEntrada()"><mat-icon>add</mat-icon> Registrar</button>
+
+  <mat-form-field>
+    <mat-label>Filtrar...</mat-label>
+    <input matInput (keyup)="aplicarFiltro($event)" placeholder="Digite o que deseja filtrar...">
+  </mat-form-field>
+  <h1 style="float: right;">Valor por hora: R${{estacionamento.valorPorHora}}</h1>
+</div>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="entradas" class="example-table" matSort matSortActive="placa" matSortDirection="asc">
+
+    <ng-container matColumnDef="placa">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Placa</th>
+      <td mat-cell *matCellDef="let row">{{row.veiculo.placa}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="modelo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Modelo</th>
+      <td mat-cell *matCellDef="let row">{{row.veiculo.modelo}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="cor">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Cor</th>
+      <td mat-cell *matCellDef="let row">{{row.veiculo.cor}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="hora">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Hora</th>
+      <td mat-cell *matCellDef="let row">{{row.hora | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="funcionario">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Funcionário</th>
+      <td mat-cell *matCellDef="let row">{{row.funcionario.nome}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-raised-button color="primary" (click)="marcarSaida(row)">Marcar Saída</button>
+        <button mat-icon-button matTooltip="Excluir" matTooltipPosition="right" (click)="excluirEntrada(row.id)" color="warn"><mat-icon>delete_outline</mat-icon></button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [length]="resultsLength" [pageSize]="10" [pageSizeOptions]="[10, 25, 40]"></mat-paginator>
+</div>

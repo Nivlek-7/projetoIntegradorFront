@@ -1,0 +1,51 @@
+<h2 mat-dialog-title>Registrar entrada</h2>
+<form>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Veículo</mat-label>
+      <mat-select [(ngModel)]="veiculo" name="veiculo">
+        <mat-option *ngFor="let veiculo of veiculos" [value]="veiculo">
+          {{veiculo.placa}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-flat-button color="primary" class="botaoMaior" type="submit" (click)="registrarEntrada(veiculo)" cdkFocusInitial>Registrar</button>
+  </div>
+</form>
+
+<form #f2="ngForm" (ngSubmit)="registrarEntrada2(f2)">
+  <div mat-dialog-content class="segundoQuadrado">
+    <mat-divider></mat-divider>
+    <p>Veículo não cadastrado? Digite as informações dele agora, abaixo.</p>
+    <mat-form-field>
+      <mat-label>Placa</mat-label>
+      <input matInput placeholder="Digite a placa do veiculo" type="text" required name="placa" ngModel #placa="ngModel">
+        <mat-error *ngIf="placa.invalid">Placa é necessário</mat-error>
+      <mat-icon matSuffix>font_download</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Modelo</mat-label>
+      <input matInput placeholder="Digite o modelo do veiculo" type="text" required name="modelo" ngModel #modelo="ngModel">
+        <mat-error *ngIf="modelo.invalid">Modelo é necessário</mat-error>
+      <mat-icon matSuffix>local_activity</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Cor</mat-label>
+      <input matInput placeholder="Digite a cor do veículo" type="text" required name="cor" ngModel #cor="ngModel">
+        <mat-error *ngIf="cor.invalid">Cor é necessário</mat-error>
+      <mat-icon matSuffix>color_lens</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions>
+    <a mat-button mat-dialog-close>Cancelar</a>
+    <button mat-flat-button color="primary" type="submit" [disabled]="!f2.valid" cdkFocusInitial>Registrar</button>
+  </div>
+</form>
+
+

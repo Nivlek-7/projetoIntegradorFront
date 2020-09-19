@@ -21,13 +21,19 @@ import { FuncionarioComponent } from './funcionario.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { ClienteFormComponent } from './cliente/cliente-form/cliente-form.component';
 import { VeiculoFormComponent } from './cliente/veiculo-form/veiculo-form.component';
+import { EntradaSaidaComponent } from './entrada-saida/entrada-saida.component';
+import { RegistrarEntradaComponent } from './entrada-saida/registrar-entrada/registrar-entrada.component';
+import { MarcarSaidaComponent } from './entrada-saida/marcar-saida/marcar-saida.component';
 
 @NgModule({
   declarations: [
     FuncionarioComponent,
     ClienteComponent,
     ClienteFormComponent,
-    VeiculoFormComponent
+    VeiculoFormComponent,
+    EntradaSaidaComponent,
+    RegistrarEntradaComponent,
+    MarcarSaidaComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,16 @@
+.filter {
+  min-width: 150px;
+  width: 50%;
+}
+
+.filter button {
+  margin-right: 15px;
+}
+
+.filter mat-form-field {
+  width: 50%;
+}
+
+table {
+  width: 100%;
+}

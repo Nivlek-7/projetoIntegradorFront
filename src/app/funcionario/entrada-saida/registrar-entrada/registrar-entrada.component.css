@@ -1,0 +1,25 @@
+.mat-dialog-content {
+  border-radius: 10px;
+}
+
+mat-form-field {
+  width: 100%;
+  display: block;
+  font-size: 15px;
+}
+
+button, a {
+  width: 48%;
+}
+
+.botaoMaior {
+  width: 100%;
+}
+
+.segundoQuadrado {
+  margin-top: 30px;
+}
+
+p {
+  margin-top: 20px;
+}
