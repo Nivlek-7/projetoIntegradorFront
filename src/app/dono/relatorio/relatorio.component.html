@@ -1,0 +1,60 @@
+<div style="display: inline-block;">
+  <h1>Funcionários</h1>
+  <h1>Lucro total: R${{lucroTotal | number:'1.2'}}</h1>
+</div>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="saidas" class="example-table" matSort matSortActive="horaEntrada" matSortDirection="asc">
+
+    <ng-container matColumnDef="estacionamento">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Estacionamento</th>
+      <td mat-cell *matCellDef="let row">{{row.entrada.estacionamento.nome}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="placa">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Placa</th>
+      <td mat-cell *matCellDef="let row">{{row.entrada.veiculo.placa}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="modelo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Modelo</th>
+      <td mat-cell *matCellDef="let row">{{row.entrada.veiculo.modelo}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="cor">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Cor</th>
+      <td mat-cell *matCellDef="let row">{{row.entrada.veiculo.cor}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="horaEntrada">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Hora de Entrada</th>
+      <td mat-cell *matCellDef="let row">{{row.entrada.hora | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="horaSaida">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Hora de Saída</th>
+      <td mat-cell *matCellDef="let row">{{row.hora | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="valor">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Valor Pago</th>
+      <td mat-cell *matCellDef="let row">{{row.valorPago | number:'1.0-2'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="funcEnt">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Funcionário Entrada</th>
+      <td mat-cell *matCellDef="let row">{{row.entrada.funcionario.nome}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="funcSaida">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Funcionário Saída</th>
+      <td mat-cell *matCellDef="let row">{{row.funcionario.nome}}</td>
+    </ng-container>
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [length]="resultsLength" [pageSize]="10" [pageSizeOptions]="[10, 25, 40]"></mat-paginator>
+</div>

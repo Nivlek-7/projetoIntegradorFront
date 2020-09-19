@@ -22,6 +22,7 @@ import { EstacionamentoComponent } from './estacionamento/estacionamento.compone
 import { EstacFormComponent } from './estacionamento/estac-form/estac-form.component';
 import { FuncComponent } from './func/func.component';
 import { FuncFormComponent } from './func/func-form/func-form.component';
+import { RelatorioComponent } from './relatorio/relatorio.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FuncFormComponent } from './func/func-form/func-form.component';
     EstacionamentoComponent,
     EstacFormComponent,
     FuncComponent,
-    FuncFormComponent
+    FuncFormComponent,
+    RelatorioComponent
   ],
   imports: [
     CommonModule,
